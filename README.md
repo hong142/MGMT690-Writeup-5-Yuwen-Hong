@@ -1,17 +1,16 @@
 # Containerizing analyses
 Last week, we designed our full security image object detection pipeline, which includes stages of preprocessing, object detection and postprocessing. This writeup discusses the software container, the last piece we need before we deploy the whole pipeline. Specifically, we are going to briefly introduce Docker, the most popular software to facilitate container creation for data analytics. We will containerize one of the stages, validation, to show you how Docker works, so that you can deploy similar things.
 ## Why software containers?
-When we have an application build, we essentially want to take this application off laptop, and get them running on the cloud or some instance in the cloud. For our case, it would be Python application and ec2 of amazon. To achieve this, typically we have four options. 
+When we have an application build, we want to take this application off laptop, and get them running on the cloud or some instance in the cloud. For our case, it would be Python application and ec2 of amazon. To achieve this, typically we have four options. 
 ### One app per instance
 The most straightforward way is to install one application per instance, and install its dependencies directly on that instance. That means every time you want to run an application on a certain machine, you will need to manually create an instance and copy over code and dependencies. The process is inefficient in terms of both time and space.
 ### Multiple apps per instance
 Likewise, you can install multiple applications together with their dependencies directly on one instance. However, in addition to the issue of inefficiency, this approach also raises issues of duplication or even conflict because not all the dependencies you want to run on the same machine coexist nicely. For example, if you have two applications, both running scikit-learn, then typically you will install scikit-learn twice. What's worse, if two applications are running different versions of scikit-learn, then you may encounter collisions.
+### Virtual Machine (VM) 
+To overcome the problems of having to manually figure out which application can run on which cloud instance, we get the third option, virtual machine(VM), and it can be one or many per instance. VM partition all the things we need for multiple applications, and run those things on a virtual environment with disk space allocated. 
 
-### Virtual Machine (VM)
-what can run on what. Where. 
-Then, to overcome prevoius problems, we get the thirid option, vitural machiena(VM), which cna be one or many per instance. Vm came to partition fo all the stauff we need, TUN THEM ON THE SAME MACHINE on virtual envirnmnet. Vm hundenben, spinning that vm on your local machine, specify allocaio of discs space to my vm , os that is can do what it needs to od. Nost of the time,  you probablry not using that much RAM or the sapece, and you are not even use it all the time, but nothing else can sue this. Not very efficient resource-wise beacuse tihs automaticallty limits how many things you can run on this machine. Moving a thig around all the time and constantly update it,  between machine or a new machine, it’s a lot data transfer, slow in genral. Each cloud instance we are takiling about here is a vm, you can run multiple vm on your location machine, each one have difernt diffendencies insdie it. 
-
-### Containers!
+Though VM simplifies the process to allocate applications across instances, it doesn’t really solve the issue of resource optimization. Essentially, you still have to move thigs around all the time and constantly update them, between machines or on a new machine. Consider the amount of data to transfer, the process would be slow in general. Also, most of the time, you are probably not using that much RAM or the space as you assigned to an application, but nothing else can use that surplus space. This automatically limits how many things you can run on a certain machine.
+### Containers
 which eosen’t rea;ly slove the optiomiztion of resource. Using containers. Automatilating , coarbing out vm for each thing running. Container, similar.
 New way, you carete this rather small pacjages that includes your application and its dependencies and the files systems, can operate on. No matter what’s insiede them are trated the same in keener.share the underly kernel. Underliy memeroty, disc usage, cpu. If one isne’t using up memory, that’s all free for the other one to utilie. 
 
