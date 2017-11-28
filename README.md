@@ -1,21 +1,14 @@
 # Containerizing analyses
 Last week, we designed our full security image object detection pipeline, which includes stages of preprocessing, object detection and postprocessing. This writeup discusses the software container, the last piece we need before we deploy the whole pipeline. Specifically, we are going to briefly introduce Docker, the most popular software to facilitate container creation for data analytics. We will containerize one of the stages, validation, to show you how Docker works, so that you can deploy similar things.
 ## Why software containers?
-When we have an application build, essteanilly we want to take this app.ications off laptop, and get them running on th cloud or some instance in the coud. For our case, it would be ec2 of amazon. To acheive this, typically we have four options. 
-
-Python application, run nin gcyeknetliean, and I’m plot some stuff usingnmpy of something. On cloud instance1.
-Python, aseclilsaern,numpy have to get those things to instance 1.command program or service to tkar thstff and upload there, you canuploda to doprbox and dolwoan form ther. Not jusrt move oython sript over, also make sure those thingsaccible from python inthat Machine. 
-COMMit to gitbud, some automation, letrally run a script creta one of the instances, went inot the instnces and install dependencies you have listed out, move the code over and statreted runningit. It too far a way from some people might have done. Take quite abit a time, dpandas is the worst. Thigns like that, duplication ,runig thigns over andover again, working on difernt application, both running caeivleran, could trying to dulicate install samething. Diifernt version. Clisions. Not all of the dennpeidiency you want run on the same machine are going be coesitst nicaely. 
-
-Old way, install dependies, andhoperfuly they don’t conflict, and installapplcaition on top of this. 
-
+When we have an application build, we essentially want to take this application off laptop, and get them running on the cloud or some instance in the cloud. For our case, it would be Python application and ec2 of amazon. To achieve this, typically we have four options. 
 ### One app per instance
-, install dependencies directly on the instance. 
-
-
+The most straightforward way is to install one application per instance, and install its dependencies directly on that instance. That means every time you want to run an application on a certain machine, you will need to manually create an instance and copy over code and dependencies. The process is inefficient in terms of both time and space.
 ### Multiple apps per instance
-, install dependencies directly on the instance.issues of conflcist, what can run on what. Where. 
+Likewise, you can install multiple applications together with their dependencies directly on one instance. However, in addition to the issue of inefficiency, this approach also raises issues of duplication or even conflict because not all the dependencies you want to run on the same machine coexist nicely. For example, if you have two applications, both running scikit-learn, then typically you will install scikit-learn twice. What's worse, if two applications are running different versions of scikit-learn, then you may encounter collisions.
+
 ### Virtual Machine (VM)
+what can run on what. Where. 
 Then, to overcome prevoius problems, we get the thirid option, vitural machiena(VM), which cna be one or many per instance. Vm came to partition fo all the stauff we need, TUN THEM ON THE SAME MACHINE on virtual envirnmnet. Vm hundenben, spinning that vm on your local machine, specify allocaio of discs space to my vm , os that is can do what it needs to od. Nost of the time,  you probablry not using that much RAM or the sapece, and you are not even use it all the time, but nothing else can sue this. Not very efficient resource-wise beacuse tihs automaticallty limits how many things you can run on this machine. Moving a thig around all the time and constantly update it,  between machine or a new machine, it’s a lot data transfer, slow in genral. Each cloud instance we are takiling about here is a vm, you can run multiple vm on your location machine, each one have difernt diffendencies insdie it. 
 
 ### Containers!
