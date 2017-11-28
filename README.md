@@ -1,5 +1,5 @@
 # Containerizing analyses
-Last week，we desinde our pirpieline with varuies stages, ptrprocesisng, object detection and post processing. This writeup discusses the software contienr, Last piece we need before we actually deploy everything together. In the ontext of data science ot data analytics, we are going  to befire intro to docter which si by far the most popular implementation thsta beused fro fostaere containers in the industry. Containerlizi.ing one fo the stages, validation, and see how that works. Docekre hands on how that works how you can deploy similar things.
+Last week, we designed our full security image object detection pipeline, which includes stages of preprocessing, object detection and postprocessing. This writeup discusses the software container, the last piece we need before we deploy the whole pipeline. Specifically, we are going to briefly introduce Docker, the most popular software to facilitate container creation for data analytics. We will containerize one of the stages, validation, to show you how Docker works, so that you can deploy similar things.
 ## Why software containers?
 When we have an application build, essteanilly we want to take this app.ications off laptop, and get them running on th cloud or some instance in the coud. For our case, it would be ec2 of amazon. To acheive this, typically we have four options. 
 
