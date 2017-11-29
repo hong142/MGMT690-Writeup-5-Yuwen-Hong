@@ -15,16 +15,8 @@ Inconvenience associated with VM brings us to the forth option - software contai
 
 Moreover, we are running an analytics project and we expect the application to make decision by itself, such as make detection and inform customers with threats. Everything of our application need to be run at a very high level of integrity and reproducibility. We don’t want to loss trust from users because of the breakdown of the application. We also don’t want to generate extra cost for a wrong decision due to wrong execution of the application. Though we can ensure the application runs properly on our local machine, when the application is moved to a different environment in a traditional way, extra uncertainty is generated and raises doubt on the performance of the application. You can carefully assess the risks and try to fill all the gaps manually, but software container with Docker can completely remove those concerns with less cost. You can quickly package things you run locally and run the package somewhere else in the exact same way, greatly improved the integrity and reproducibility.
 ## Intro to Docker
-### image
-For Docker, an image is a packeage of an app and its dependencies you create on our local machioie to run somewhree else. 
-### container
-A docker contianre is a running instance of docker image. When you run a docker image, you have a runign docker sofetwera container, which you can interanct with. 
-### engine 
-- the underlying application that builds and runs images
-### registry 
-registriy is where you store and tag all your docker images, so you can push up changes and pull them to different machines. Similar to the repository on Github, registry can be either privivate or public. 
-### Dockerfile
-a file that tells the engine how to build an image
+Before we work with Docker, you should get familiar with a few jargons. A ***Docker image*** is a package of an app and its dependencies you create on our local machine to run somewhere else. A ***docker container*** is a running instance of a docker image. When you run a docker image, you have a running docker software container, which you can interact with. The ***Docker engine*** is the underlying application that builds and runs images. The ***registry*** is where you store and tag all your docker images, so you can push up changes and pull them to different machines. Similar to the repositories on GitHub, registries can be either private or public. ***Dockerfile*** is a file that tells the engine how to build an image.
+
 
 
 
