@@ -50,7 +50,7 @@ RUN set -x \
 
 ADD validate.py /code/validate.py
 ```
-After we pull down the image, here are three common wanys to run imges as constiernes: 
+After we pull down the image, here are three common ways to run images as constainers: 
 #### Interactively
 You can run them interactively, which means run the container and going into the container to do things manually. You'll need this code to call the image, with "it" stands for interactive.
 
