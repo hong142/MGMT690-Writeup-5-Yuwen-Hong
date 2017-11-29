@@ -19,13 +19,6 @@ Moreover, we are running an analytics project and we expect the application to m
 The old way: Applications on host &nbsp; &nbsp;  The new way: Deploy containers <br />
 ## Intro to Docker
 Before we work with Docker, you should get familiar with a few jargons. A ***docker image*** is a package of an app and its dependencies you create on our local machine to run somewhere else. A ***docker container*** is a running instance of a docker image. When you run a docker image, you have a running docker software container, which you can interact with. The ***docker engine*** is the underlying application that builds and runs images. The ***registry*** is where you store and tag all your docker images, so you can push up changes and pull them to different machines. Similar to the repositories on GitHub, registries can be either private or public. ***Dockerfile*** is a file that tells the engine how to build an image.
-
-
-
-
-
-Upload the image to a registry
-Deploy a Docker container, based on the image and from the registry, to a VM
 ## “Docker-izing” a pipeline stage (validation)
 ### Create Dockerfiles
 The first step to containerizing a pipeline stage with docker is to develop the application, create a dockerfile accordingly and push it to GitHub. The application script needed is exact the one you normally would develop locally and version on GitHub. You can find a lot reference for creating docker file online. What we use this time is the following 2-line code, which means add our "validate" script (the application) from Python. The "/code/validate" part is the location in the image we assigne to the script, so that we CAN FIND IT ESILY. You can put your script anywhere in your iamge, and you can add as many such files as you want. The "from” at the beginning is almost always in a docker file, and it allows you to setup a base system and dependencies that someone else already created instead of recreating it each time. For official docker images, you can go to [Docker Hub](https://hub.docker.com/), a public regristy of docker iamges. Using exsing images as base image could save us a lot of time compring to start from stach, and usally detials about the auhtor and the functinaility is well-documentd for those images. 
