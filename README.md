@@ -64,7 +64,7 @@ You can also run the container and run a specified command in that container. If
 $ sudo docker run -it /bin/ash
 ```
 #### Daemon
-If you had a service such as a Shinyapp or something, you might want to run that as a daemon, which allows you application to keep running without having you to login to the machine repeatedly
+If you had a service such as a Shinyapp or something, you might want to run that as a daemon, which allows your application to keep running without having to login to the machine repeatedly
 
 ```
 $ sudo docker run -d
