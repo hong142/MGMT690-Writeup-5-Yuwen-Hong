@@ -58,14 +58,18 @@ Machine with doecker on it. Mauly be ;going in againrunignthis comnads, but this
 Sudo docker run, specify the image I want ot run, I could runjust like that, 
 Here are three common wanys to run imges as constiernes: 
 ### Interactively
-You can urn them interactively, which means run th ocnteianer and going into the ocntianer to things maunuly. You'll need this code to call the image, with "it" stands for interactive.
+You can urn them interactively, which means run th ocnteianer and going into the ocntianer to do things maunuly. You'll need this code to call the image, with "it" stands for interactive.
 
 ```
 $ sudo docker run -it <image>
 ```
-### OrI can run the contienre an druna comnad in that container, speficy ocmamd. 
-/dan ash runinga commd in this contiern, means run an asher show in this comtirnaer, such that I can dod stuff in the ocntienr. If you run that, youshould have those litt command promp, there is a docker contierne running onthat machine, and we are intercltiveliy isnde that contaidner. Where wecan excecute diferent commnds. Ls seethis code directory, whre I put code to imgae, if I cd code, ls, I can see valisdete things. Exact same vailde script I have locally, can runit the same way. Tuhc lod jpg. Make duern. The behaiveor that I programed locally, run that eact functionaly now. Without instialling anything, just copy over that docker iamge, exit the ocntianre, not the machine.
-### Runtha tcontierne as a dimen, which is if you had a service like a shiny app or something, you want to run tha t as a demdn, such that you run it a nd you don’t have to be login to the mchien to continue to run , it just keeps running. 
+### Commnad in contienr
+You can also run the contianer and run a specified command in that container. If you run the following code, you should see a docker command prompt, and now you are intercltiveliy isnde a running contaidner and you can excecute diferent commnds. We used this approch to run our contienr and we found exactly the same vailde script we have locally, which we could run it the same way on the cloud as on our local machine without instialling anything.
+```
+$ sudo docker run -it <image> /din/ash
+```
+### Daemon
+If you had a service such as a shinyapp or something, you might want to run that as a daemon, which allosws you application to keep running without having you to login to the mchien repaetedly
 Dokcer call jupertnotbook.dont’ have juptyoer instlled, pull this iamge, rather lager, strgiht around jytoer server and coonect to it. Sudo docker run /d for demen. Keep online. Expose a port the juyper running on as its runign on my local machine. 
 ## What will be different in the actual Pipeline, Kubernetes + Pachyderm
 We might need to deploy multiple containerized “workers” for each stage
