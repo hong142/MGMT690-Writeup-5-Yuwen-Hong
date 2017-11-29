@@ -58,19 +58,23 @@ Machine with doecker on it. Mauly be ;going in againrunignthis comnads, but this
 Sudo docker run, specify the image I want ot run, I could runjust like that, 
 Here are three common wanys to run imges as constiernes: 
 ### Interactively
-You can urn them interactively, which means run th ocnteianer and going into the ocntianer to do things maunuly. You'll need this code to call the image, with "it" stands for interactive.
+You can run them interactively, which means run the container and going into the container to do things manually. You'll need this code to call the image, with "it" stands for interactive.
 
 ```
 $ sudo docker run -it <image>
 ```
-### Commnad in contienr
-You can also run the contianer and run a specified command in that container. If you run the following code, you should see a docker command prompt, and now you are intercltiveliy isnde a running contaidner and you can excecute diferent commnds. We used this approch to run our contienr and we found exactly the same vailde script we have locally, which we could run it the same way on the cloud as on our local machine without instialling anything.
+### Command in container
+You can also run the container and run a specified command in that container. If you run the following code, you should see a docker command prompt, and now you are interactively inside a running container and you can execute different commands within the ash shell. We used this approach to run our container and we found exactly the same” valid” script we have locally, which we could run it the same way on the cloud as on our local machine without installing anything.
+
 ```
-$ sudo docker run -it <image> /din/ash
+$ sudo docker run -it /bin/ash
 ```
 ### Daemon
-If you had a service such as a shinyapp or something, you might want to run that as a daemon, which allosws you application to keep running without having you to login to the mchien repaetedly
-Dokcer call jupertnotbook.dont’ have juptyoer instlled, pull this iamge, rather lager, strgiht around jytoer server and coonect to it. Sudo docker run /d for demen. Keep online. Expose a port the juyper running on as its runign on my local machine. 
+If you had a service such as a Shinyapp or something, you might want to run that as a daemon, which allows you application to keep running without having you to login to the machine repeatedly
+
+```
+$ sudo docker run -d
+```
 ## What will be different in the actual Pipeline, Kubernetes + Pachyderm
 We might need to deploy multiple containerized “workers” for each stage
 We need to get the right data to the right containers
