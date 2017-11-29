@@ -49,19 +49,19 @@ RUN set -x \
 ADD validate.py /code/validate.py
 ```
 After we pull down the image, here are three common wanys to run imges as constiernes: 
-### Interactively
+#### Interactively
 You can run them interactively, which means run the container and going into the container to do things manually. You'll need this code to call the image, with "it" stands for interactive.
 
 ```
 $ sudo docker run -it <image>
 ```
-### Command in container
+#### Command in container
 You can also run the container and run a specified command in that container. If you run the following code, you should see a docker command prompt, and now you are interactively inside a running container and you can execute different commands within the ash shell. We used this approach to run our container and we found exactly the same” valid” script we have locally, which we could run it the same way on the cloud as on our local machine without installing anything.
 
 ```
 $ sudo docker run -it /bin/ash
 ```
-### Daemon
+#### Daemon
 If you had a service such as a Shinyapp or something, you might want to run that as a daemon, which allows you application to keep running without having you to login to the machine repeatedly
 
 ```
