@@ -36,7 +36,7 @@ When you want to run a Docker image, you will pull it down from the registry and
 ```
 $sudo docker pull <image>
 ```
-If you pull down an existing image, one thing you want to pay attention to is its size. Smaller images are preferred as it’s quicker to get them up. If you look at an officially supported image, usually it pulls in all the stuff the author thought important, but you don’t usually need them all. Take our Python example, we don’t need both Python 2 and Python3, and multiple file systems. Thus, we create another dockerfile for image. This time, we just install Python on the APK system. You can see there are three layers for the file – from, run and add. The more layers you add to your dockerfile, the bigger the file. You can always modify or create your own docker images to get a relatively smaller size, so that you won’t taking up a lot space and time to deal with the images.
+If you pull down an existing image, one thing you want to pay attention to is its size. Smaller images are preferred as it’s quicker to get them up. If you look at an officially supported image, usually it pulls in all the stuff the author thought important, but you don’t usually need them all. Take our Python example, we don’t need both Python 2 and Python3, and multiple file systems. Thus, we create another dockerfile for image. This time, we just install Python on the APK system. You can see there are three layers for the file – from, run and add. The more layers you add to your dockerfile, the bigger the file. You can always modify or create your own docker images to get a relatively smaller size, so that you won’t taking up a lot of space and time to deal with the images.
 
 ```
 FROM alpine:3.6
