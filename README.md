@@ -1,7 +1,7 @@
 # Containerizing analyses
 Last week, we designed our full security image object detection pipeline, which includes stages of preprocessing, object detection and postprocessing. This writeup discusses the software container, the last piece we need before we deploy the whole pipeline. Specifically, we are going to briefly introduce Docker, the most popular software to facilitate container creation for data analytics. We will containerize one of the stages, validation, to show you how Docker works, so that you can deploy similar things.
 ## [Why software containers?](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/#why-do-i-need-kubernetes-and-what-can-it-do)
-When we have an application build, we want to take this application off laptop, and get them running on the cloud or some instance in the cloud. For our case, it would be Python application and ec2 of amazon. To achieve this, typically we have four options. 
+When we have an application build, we want to take this application off laptop, and get them running on the cloud or some instance in the cloud. For our case, it would be Python applications and ec2 of amazon. To achieve this, typically we have four options. 
 ### One app per instance
 The most straightforward way is to install one application per instance, and install its dependencies directly on that instance. That means every time you want to run an application on a certain machine, you will need to manually create an instance and copy over code and dependencies. The process is inefficient in terms of both time and space.
 ### Multiple apps per instance
